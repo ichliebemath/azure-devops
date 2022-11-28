@@ -1,3 +1,5 @@
-# azure-devops
-This is a repo for azure devops
-## This was edited in Cloud Shell
+# flask-ml-service
+A sample Flask application to showcase the Azure Pipeline.
+
+## Environment
+Python 3.7

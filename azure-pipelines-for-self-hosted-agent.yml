@@ -71,17 +71,21 @@ stages:
   jobs:
   - deployment: DeploymentJob
     pool: myAgentPool
+    strategy:
+      runOnce:
+        deploy:
+          steps:    
 
-    - script: |
-        python3.7 -m pip install --upgrade pip
-        python3.7 -m pip install setup
-        python3.7 -m pip install -r requirements.txt
-      workingDirectory: $(projectRoot)
-      displayName: 'Step 1: Installing dependencies'
-    
-    - script: |
-        git clone https://github.com/ichliebemath/flask-ml-service.git
-        cd flask-ml-service
-        az webapp up --name $(webAppName) --resource-group $(resourceGroup) --runtime "PYTHON:3.7"
-      workingDirectory: $(projectRoot)
-      displayName: 'Deploy Web App'
+          - script: |
+            python3.7 -m pip install --upgrade pip
+            python3.7 -m pip install setup
+            python3.7 -m pip install -r requirements.txt
+          workingDirectory: $(projectRoot)
+          displayName: 'Step 1: Installing dependencies'
+
+          - script: |
+            git clone https://github.com/ichliebemath/flask-ml-service.git
+            cd flask-ml-service
+            az webapp up --name $(webAppName) --resource-group $(resourceGroup) --runtime "PYTHON:3.7"
+          workingDirectory: $(projectRoot)
+          displayName: 'Deploy Web App'

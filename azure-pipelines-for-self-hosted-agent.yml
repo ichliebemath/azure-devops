@@ -10,7 +10,7 @@ pool: myAgentPool
 
 variables:
   # TODO: Replace the service connection name as used in the DevOps project settings
-  azureServiceConnectionId: 'Azure subscription 1'
+  azureServiceConnectionId: '5f1d694a-865a-4e61-b684-ddb554ba23e3'
   
   # TODO: Specify the value of the existing Web App name
   webAppName: 'flask-ml-service'
@@ -90,6 +90,7 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy the Web App'
             inputs:
+              appType: 'webAppLinux'
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip

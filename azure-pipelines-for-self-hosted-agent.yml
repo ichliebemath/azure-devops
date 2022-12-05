@@ -10,7 +10,7 @@ pool: myAgentPool
 
 variables:
   # TODO: Replace the service connection name as used in the DevOps project settings
-  azureServiceConnectionId: 'myServiceConnection'
+  azureServiceConnectionId: '5f1d694a-865a-4e61-b684-ddb554ba23e3'
   
   # TODO: Specify the value of the existing Web App name
   webAppName: 'flask-ml-service'

@@ -10,7 +10,7 @@ pool: myAgentPool
 
 variables:
   # TODO: Replace the service connection name as used in the DevOps project settings
-  azureServiceConnectionId: 'mySC'
+  azureServiceConnectionId: '5f1d694a-865a-4e61-b684-ddb554ba23e3'
   
   # TODO: Specify the value of the existing Web App name
   webAppName: 'flask-ml-service'
@@ -18,10 +18,16 @@ variables:
   # Resource Group
   resourceGroup: 'Azuredevops'
   # Environment name
-  environmentName: 'flask-ml-service'
+  environmentName: 'dev'
+  
+  # Image of virtual machine
+  vmImageName: 'ubuntu-latest'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
+  
+  # Python Version
+  pythonVersion: '3.7'
 
 stages:
 - stage: Build
@@ -70,22 +76,22 @@ stages:
   condition: succeeded()
   jobs:
   - deployment: DeploymentJob
-    pool: myAgentPool
+    pool:
+      vmImage: $(vmImageName)
+    environment: $(environmentName)
     strategy:
       runOnce:
         deploy:
-          steps:    
+          steps:
 
-          - script: |
-            python3.7 -m pip install --upgrade pip
-            python3.7 -m pip install setup
-            python3.7 -m pip install -r requirements.txt
-          workingDirectory: $(projectRoot)
-          displayName: 'Step 1: Installing dependencies'
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: '$(pythonVersion)'
+            displayName: 'Use the defined python version'
 
-          - script: |
-            git clone https://github.com/ichliebemath/flask-ml-service.git
-            cd flask-ml-service
-            az webapp up --name $(webAppName) --resource-group $(resourceGroup) --runtime "PYTHON:3.7"
-          workingDirectory: $(projectRoot)
-          displayName: 'Deploy Web App'
+          - task: AzureWebApp@1
+            displayName: 'Deploy the Web App'
+            inputs:
+              azureSubscription: $(azureServiceConnectionId)
+              appName: $(webAppName)
+              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip

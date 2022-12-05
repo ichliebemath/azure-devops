@@ -13,8 +13,10 @@ variables:
   azureServiceConnectionId: 'mySC'
   
   # TODO: Specify the value of the existing Web App name
-  webAppName: 'mywebapp207578'
+  webAppName: 'flask-ml-service'
 
+  # Resource Group
+  resourceGroup: 'Azuredevops'
   # Environment name
   environmentName: 'flask-ml-service'
 
@@ -60,3 +62,27 @@ stages:
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       displayName: 'myStep 5 - Upload package'
       artifact: drop
+
+
+- stage: Deploy
+  displayName: 'Deploy stage'
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - deployment: DeploymentJob
+    pool:myAgentPool
+    steps:
+
+    - script: |
+        python3.7 -m pip install --upgrade pip
+        python3.7 -m pip install setup
+        python3.7 -m pip install -r requirements.txt
+      workingDirectory: $(projectRoot)
+      displayName: 'Step 1: Installing dependencies'
+    
+    - script: |
+        git clone https://github.com/ichliebemath/flask-ml-service.git
+        cd flask-ml-service
+        az webapp up --name $(webAppName) --resource-group $(resourceGroup) --runtime "PYTHON:3.7"
+      workingDirectory: $(projectRoot)
+      displayName: 'Deploy Web App'

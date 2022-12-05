@@ -10,6 +10,8 @@ Python 3.7
 ## Set up Azure Cloud Shell
 
 1. Create a Github Repo containing requirements.txt and Makefile
+![image](https://user-images.githubusercontent.com/74469717/205758509-51851c78-33da-44ea-a9b8-8fa63fe17fd5.png)
+
 <img width="1785" alt="image" src="https://user-images.githubusercontent.com/74469717/205752895-26937107-b6c4-44a4-9bfa-f07113aa7566.png">
 
 2. Connect Azure CLI with Github Repo with ssh-keys

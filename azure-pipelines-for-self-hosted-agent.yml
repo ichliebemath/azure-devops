@@ -70,8 +70,8 @@ stages:
   condition: succeeded()
   jobs:
   - deployment: DeploymentJob
-    pool:myAgentPool
-    steps:
+    pool: myAgentPool
+    steps:    
     - script: |
         python3.7 -m pip install --upgrade pip
         python3.7 -m pip install setup

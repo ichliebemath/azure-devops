@@ -23,8 +23,10 @@ Python 3.7
 ![image](https://user-images.githubusercontent.com/74469717/205755987-e2ae26f5-1b6b-4faf-b273-5497399ee2fe.png)
 
 5. Enable Github Actions
+
 5.1 Setup workflow
 ![image](https://user-images.githubusercontent.com/74469717/205757096-c56317b0-70d3-4ace-b068-bd38b083421b.png)
+
 5.2 Run the yml.file
 ![image](https://user-images.githubusercontent.com/74469717/205757370-15525daa-e915-410b-ad06-bbc5c3c67c18.png)
 
@@ -38,6 +40,7 @@ deploy the Flask starter code to Azure App Services
 
 Making predictions
 ![image](https://user-images.githubusercontent.com/74469717/205757766-962a63d9-c2c5-4c96-b154-45acb798b383.png)
+
 ![image](https://user-images.githubusercontent.com/74469717/205757827-d81ab25e-6774-431f-a4e5-9254f3f7e7b2.png)
 
 Logs

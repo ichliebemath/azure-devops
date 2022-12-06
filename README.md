@@ -86,6 +86,8 @@ This project is a sample Flask application created on the basis of the Udacity p
     ```
     az webapp log tail --name flask-ml-service --resource-group Azuredevops
     ```
+    <img width="1353" alt="image" src="https://user-images.githubusercontent.com/74469717/205967962-33682640-db97-4653-b49d-47da9e1b7646.png">
+
 ### Prediction with Automation
 
 1. Setup Virtual Machine in Azure Portal

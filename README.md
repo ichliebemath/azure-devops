@@ -12,7 +12,7 @@ This project is a sample Flask application created on the basis of the Udacity p
 
 1. Create a Github Repo containing requirements.txt and Makefile
 
-<img width="992" alt="Screenshot 2022-12-06 at 13 37 54" src="https://user-images.githubusercontent.com/74469717/205914896-f359f2b5-b4a8-438c-a7e7-b883de978d30.png">
+    <img width="992" alt="Screenshot 2022-12-06 at 13 37 54" src="https://user-images.githubusercontent.com/74469717/205914896-f359f2b5-b4a8-438c-a7e7-b883de978d30.png">
 
 
 2. Connect Azure Cloud Shell with Github Repo with ssh-keys (with your own directory)
@@ -31,26 +31,26 @@ This project is a sample Flask application created on the basis of the Udacity p
     
 4. Clone Github Repo to Azure Cloud Shell
 
-![image](https://user-images.githubusercontent.com/74469717/205753581-b6474893-8aa2-4a03-8163-670e761fcc0d.png)
+    ![image](https://user-images.githubusercontent.com/74469717/205753581-b6474893-8aa2-4a03-8163-670e761fcc0d.png)
 
 5. run `make all` in Azure cloud shell to download all the dependencies and test the code
 
-![image](https://user-images.githubusercontent.com/74469717/205755987-e2ae26f5-1b6b-4faf-b273-5497399ee2fe.png)
+    ![image](https://user-images.githubusercontent.com/74469717/205755987-e2ae26f5-1b6b-4faf-b273-5497399ee2fe.png)
 
 6. Enable Github Actions
 
-6.1 Setup workflow
+ 1. Setup workflow
 
-![image](https://user-images.githubusercontent.com/74469717/205757096-c56317b0-70d3-4ace-b068-bd38b083421b.png)
+    ![image](https://user-images.githubusercontent.com/74469717/205757096-c56317b0-70d3-4ace-b068-bd38b083421b.png)
 
-6.2 Run the workflow and test the code
+ 2. Run the workflow and test the code
 
-![image](https://user-images.githubusercontent.com/74469717/205757370-15525daa-e915-410b-ad06-bbc5c3c67c18.png)
+    ![image](https://user-images.githubusercontent.com/74469717/205757370-15525daa-e915-410b-ad06-bbc5c3c67c18.png)
 
 
 
 ## Continuous Delivery 
-### Make 
+### Make Manual Prediction
 1. Copy the Flask starter code to Azure App Services and prepare for a push
 
     ```
@@ -69,8 +69,7 @@ This project is a sample Flask application created on the basis of the Udacity p
     az webapp up --name flask-ml-service --resource-group Azuredevops --runtime "PYTHON:3.7"
     ```
 
-![image](https://user-images.githubusercontent.com/74469717/205757766-962a63d9-c2c5-4c96-b154-45acb798b383.png)
-
+    ![image](https://user-images.githubusercontent.com/74469717/205757766-962a63d9-c2c5-4c96-b154-45acb798b383.png)
 
 
 3. Making predictions
@@ -79,8 +78,26 @@ This project is a sample Flask application created on the basis of the Udacity p
     ./make_predict_azure_app.sh
     ```
 
-![image](https://user-images.githubusercontent.com/74469717/205757827-d81ab25e-6774-431f-a4e5-9254f3f7e7b2.png)
+    ![image](https://user-images.githubusercontent.com/74469717/205757827-d81ab25e-6774-431f-a4e5-9254f3f7e7b2.png)
 
 4. Logs
+    ```
+    az webapp log tail --name flask-ml-service --resource-group Azuredevops
+    ```
+### Prediction with Automation
+
+1. Setup Virtual Machine in Azure Portal
+    ![image](https://user-images.githubusercontent.com/74469717/205955665-c63b846d-b965-4dfd-9ffe-1badbc675eae.png)
+
+2. Create new Azure Devops project and add the pipeline
+    ![image](https://user-images.githubusercontent.com/74469717/205958159-a239b20f-68c6-4996-9fab-d942b3d466ec.png)
+
+3. Add Agent Pool 
+    <img width="1470" alt="image" src="https://user-images.githubusercontent.com/74469717/205962468-7258bca1-1b66-41a2-9ebd-010a46361e6e.png">
+
+4.  Deploy Web App
+
+    <img width="1507" alt="image" src="https://user-images.githubusercontent.com/74469717/205962686-e76dd8a9-4e08-4e20-8270-0f24ac82ca7c.png">
+
 
 

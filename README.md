@@ -41,11 +41,11 @@ This project is a sample Flask application created on the basis of the Udacity p
 
 6. Enable Github Actions
 
- 1. Setup workflow
+    1. Setup workflow
 
     ![image](https://user-images.githubusercontent.com/74469717/205757096-c56317b0-70d3-4ace-b068-bd38b083421b.png)
 
- 2. Run the workflow and test the code
+    2. Run the workflow and test the code
 
     ![image](https://user-images.githubusercontent.com/74469717/205757370-15525daa-e915-410b-ad06-bbc5c3c67c18.png)
 

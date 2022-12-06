@@ -1,5 +1,5 @@
 # flask-ml-service
-This project is a sample Flask application created on the basis of the Udacity project. The motivation is to build a Github repository from scratch and create a scaffolding that will perform both Continuous Integration and Continuous Delivery
+This project is a sample Flask application created on the basis of the Udacity project. The motivation is to build a Github repository from scratch and create a scaffolding with Azure Pipeline that will perform both Continuous Integration and Continuous Delivery
 
 [![Python application test with Github Actions](https://github.com/ichliebemath/azure-devops/actions/workflows/main.yml/badge.svg)](https://github.com/ichliebemath/azure-devops/actions/workflows/main.yml)
 

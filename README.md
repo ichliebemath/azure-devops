@@ -14,8 +14,6 @@ This project is a sample Flask application created on the basis of the Udacity p
 1. Create a Github Repo containing requirements.txt and Makefile
 ![image](https://user-images.githubusercontent.com/74469717/205758509-51851c78-33da-44ea-a9b8-8fa63fe17fd5.png)
 
-<img width="1785" alt="image" src="https://user-images.githubusercontent.com/74469717/205752895-26937107-b6c4-44a4-9bfa-f07113aa7566.png">
-
 2. Connect Azure CLI with Github Repo with ssh-keys (with your own directory)
 
     ```
@@ -35,7 +33,7 @@ This project is a sample Flask application created on the basis of the Udacity p
 
 ![image](https://user-images.githubusercontent.com/74469717/205753581-b6474893-8aa2-4a03-8163-670e761fcc0d.png)
 
-5.run 'make all' in Azure cloud shell to download all the dependencies and test the code
+5. run `make all` in Azure cloud shell to download all the dependencies and test the code
 
 ![image](https://user-images.githubusercontent.com/74469717/205755987-e2ae26f5-1b6b-4faf-b273-5497399ee2fe.png)
 
@@ -45,12 +43,9 @@ This project is a sample Flask application created on the basis of the Udacity p
 
 ![image](https://user-images.githubusercontent.com/74469717/205757096-c56317b0-70d3-4ace-b068-bd38b083421b.png)
 
-6.2 Run the yml.file
+6.2 Run the workflow
 
 ![image](https://user-images.githubusercontent.com/74469717/205757370-15525daa-e915-410b-ad06-bbc5c3c67c18.png)
-
-
-##Configure Github Actions
 
 
 

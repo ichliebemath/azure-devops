@@ -8,6 +8,21 @@ This project is a sample Flask application created on the basis of the Udacity p
 1) Trello Board: https://trello.com/b/IUpZXhDw/udacity
 2) Spreadsheet: 
 
+| Week       | component                          |       |
+| ---------- | ---------------------------------- | ----- |
+| 11.5.2022  | Setup project plan                 |       |
+| 11.10.2022 | Commit code to Github repo         |       |
+| 11.15.2022 | Test with Github Actions           |       |
+| 11.20.2022 | Setup Azure Cloud Shell            |       |
+| 11.25.2022 | Clone Project to Azure Cloud Shell |
+| 11.30.2022 | Create Virtual Machine             |       |
+| 12.5.2022  | Add Azure Pipeline Agent           |       |
+| 12.10.2022 | Create Azure Pipeline              |       |
+| 12.15.2022 | Deploy WebApp using pipeline       |       |
+| 12.20.2022 | Documentation                      |       |
+|            | Goals                              | Goals |
+|            | Finish Udacity Project 2 !         |       |
+
 ## Continuous Integration
 
 1. Create a Github Repo containing requirements.txt and Makefile

@@ -42,13 +42,15 @@ This project is a sample Flask application created on the basis of the Udacity p
     ```
     python3 -m venv ~/.azure-devops
     source ~/.azure-devops/bin/activate
-
     ```
+    
     ![image](https://user-images.githubusercontent.com/74469717/205753581-b6474893-8aa2-4a03-8163-670e761fcc0d.png)
         
 4. Clone Github Repo to Azure Cloud Shell
 
     <img width="777" alt="image" src="https://user-images.githubusercontent.com/74469717/205963519-bc22dd85-edaf-475e-b63a-62b36bc17df6.png">
+
+    ![image](https://user-images.githubusercontent.com/74469717/206275399-fce3000e-c822-455a-8bce-5d6984bd0eb1.png)
 
 5. run `make all` in Azure cloud shell to download all the dependencies and test the code
 
